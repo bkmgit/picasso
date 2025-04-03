@@ -39,6 +39,10 @@
 #endif
 #include <gif_lib.h>
 
+#if GIFLIB_MAJOR > 5 || GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 2
+    #include <gif_getarg.h>
+#endif
+
 #if GIFLIB_MAJOR > 5 || GIFLIB_MAJOR == 5 && GIFLIB_MINOR >= 1
     #define GIF_CLOSE_DFILE(gif) DGifCloseFile(gif, NULL)
     #define GIF_CLOSE_EFILE(gif) EGifCloseFile(gif, NULL)
